@@ -1,0 +1,1269 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>Muslimah Elegant Style Guide — By Windy</title>
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#2C1F0E">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="By Windy">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;1,400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  --cream: #F7F2EA;
+  --warm-white: #FDFAF5;
+  --gold: #C9A96E;
+  --gold-light: #E8D5A3;
+  --gold-dark: #9A7A45;
+  --brown-deep: #2C1F0E;
+  --brown-mid: #6B4C2A;
+  --text-dark: #1E140A;
+  --text-mid: #5C4030;
+  --text-soft: #9A8070;
+}
+
+* { margin:0; padding:0; box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+html, body { height:100%; overflow:hidden; }
+
+body {
+  font-family: 'Jost', sans-serif;
+  background: var(--brown-deep);
+  color: var(--text-dark);
+  display: flex;
+  flex-direction: column;
+  max-width: 480px;
+  margin: 0 auto;
+  position: relative;
+  height: 100vh;
+  box-shadow: 0 0 60px rgba(0,0,0,0.5);
+}
+
+/* ===== TOP HEADER ===== */
+.top-header {
+  background: linear-gradient(135deg, var(--brown-deep), #3D2510);
+  padding: 14px 20px 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-shrink: 0;
+  border-bottom: 1px solid rgba(201,169,110,0.15);
+  position: relative;
+  z-index: 10;
+}
+
+.header-brand {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.1rem;
+  color: var(--gold-light);
+  font-style: italic;
+}
+
+.header-tagline {
+  font-size: 9px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: rgba(201,169,110,0.5);
+}
+
+.header-badge {
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  color: white;
+  font-size: 9px;
+  letter-spacing: 1px;
+  padding: 4px 10px;
+  border-radius: 100px;
+  font-weight: 600;
+}
+
+/* ===== PAGE CONTAINER ===== */
+.pages {
+  flex: 1;
+  overflow: hidden;
+  position: relative;
+  background: var(--cream);
+}
+
+.page {
+  position: absolute;
+  inset: 0;
+  overflow-y: auto;
+  background: var(--cream);
+  opacity: 0;
+  pointer-events: none;
+  transform: translateX(20px);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  -webkit-overflow-scrolling: touch;
+}
+
+.page.active {
+  opacity: 1;
+  pointer-events: all;
+  transform: translateX(0);
+}
+
+/* ===== BOTTOM NAV ===== */
+.bottom-nav {
+  background: var(--brown-deep);
+  border-top: 1px solid rgba(201,169,110,0.2);
+  display: flex;
+  flex-shrink: 0;
+  padding-bottom: env(safe-area-inset-bottom, 0);
+  position: relative;
+  z-index: 10;
+}
+
+.nav-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 4px 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  position: relative;
+  gap: 4px;
+}
+
+.nav-item::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 20%; right: 20%;
+  height: 2px;
+  background: linear-gradient(to right, transparent, var(--gold), transparent);
+  border-radius: 0 0 4px 4px;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.nav-item.active::before { transform: scaleX(1); }
+
+.nav-icon {
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+.nav-item.active .nav-icon { transform: scale(1.15); }
+
+.nav-label {
+  font-size: 9px;
+  letter-spacing: 0.5px;
+  color: rgba(201,169,110,0.4);
+  transition: color 0.3s ease;
+  text-align: center;
+  line-height: 1.2;
+}
+
+.nav-item.active .nav-label { color: var(--gold); }
+
+/* ===== SHARED STYLES ===== */
+.page-hero {
+  background: linear-gradient(160deg, var(--brown-deep), #3D2510);
+  padding: 32px 24px 24px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.page-hero::before {
+  content: '✦';
+  position: absolute;
+  font-size: 200px;
+  color: rgba(201,169,110,0.04);
+  top: 50%; left: 50%;
+  transform: translate(-50%,-50%);
+  animation: slowSpin 30s linear infinite;
+}
+
+@keyframes slowSpin {
+  from { transform: translate(-50%,-50%) rotate(0deg); }
+  to { transform: translate(-50%,-50%) rotate(360deg); }
+}
+
+.page-tag {
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: rgba(201,169,110,0.6);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.page-tag::before, .page-tag::after {
+  content: '';
+  width: 24px; height: 1px;
+  background: rgba(201,169,110,0.3);
+}
+
+.page-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1.8rem;
+  color: var(--warm-white);
+  font-weight: 400;
+  line-height: 1.2;
+}
+.page-title em { color: var(--gold); font-style: italic; }
+
+.page-sub {
+  font-size: 12px;
+  color: rgba(247,242,234,0.55);
+  margin-top: 8px;
+  line-height: 1.6;
+}
+
+.page-body { padding: 20px 16px 24px; }
+
+.section-label {
+  font-size: 9px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.section-label::after {
+  content: '';
+  flex: 1; height: 1px;
+  background: linear-gradient(to right, rgba(201,169,110,0.3), transparent);
+}
+
+/* ===== PAGE 1: HOME ===== */
+.home-quote {
+  background: var(--brown-deep);
+  border-radius: 16px;
+  padding: 20px;
+  margin-bottom: 16px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.home-quote::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 50% 0%, rgba(201,169,110,0.08), transparent 70%);
+}
+.home-quote p {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  font-size: 1rem;
+  color: var(--warm-white);
+  line-height: 1.6;
+  position: relative;
+}
+.home-quote span {
+  display: block;
+  margin-top: 8px;
+  font-size: 10px;
+  color: var(--gold);
+  letter-spacing: 2px;
+  position: relative;
+}
+
+.home-chapters {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.chapter-card {
+  background: white;
+  border-radius: 14px;
+  padding: 16px 14px;
+  box-shadow: 0 4px 16px rgba(44,31,14,0.07);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-bottom: 2px solid transparent;
+}
+.chapter-card:hover, .chapter-card:active {
+  transform: translateY(-3px);
+  border-bottom-color: var(--gold);
+  box-shadow: 0 8px 24px rgba(44,31,14,0.12);
+}
+.chapter-icon { font-size: 1.5rem; margin-bottom: 6px; }
+.chapter-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 0.85rem;
+  color: var(--text-dark);
+  font-weight: 500;
+  line-height: 1.3;
+}
+.chapter-num {
+  font-size: 9px;
+  color: var(--gold);
+  letter-spacing: 1px;
+  margin-bottom: 4px;
+}
+
+.bonus-banner {
+  background: linear-gradient(135deg, var(--gold-dark), #C9A96E);
+  border-radius: 14px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+.bonus-banner:active { transform: scale(0.98); }
+.bonus-banner-icon { font-size: 2rem; flex-shrink: 0; }
+.bonus-banner-text { flex: 1; }
+.bonus-banner-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 1rem;
+  color: white;
+  margin-bottom: 2px;
+}
+.bonus-banner-sub { font-size: 11px; color: rgba(255,255,255,0.75); }
+
+/* ===== PAGE 2: STYLE ===== */
+.palette-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.palette-card {
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(44,31,14,0.1);
+  transition: transform 0.3s ease;
+}
+.palette-card:active { transform: scale(0.97); }
+.palette-swatch { height: 80px; position: relative; }
+.palette-shine {
+  position: absolute; top:-50%; left:-50%;
+  width:40%; height:200%;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.2), transparent);
+  transform: rotate(30deg);
+  animation: shineLoop 3s ease infinite;
+}
+@keyframes shineLoop {
+  0% { left: -50%; }
+  100% { left: 150%; }
+}
+.palette-info { background: white; padding: 10px 12px; }
+.palette-name { font-family: 'Playfair Display', serif; font-size: 0.85rem; color: var(--text-dark); }
+.palette-mood { font-size: 10px; color: var(--text-soft); margin-top: 2px; line-height: 1.3; }
+
+.outfit-card {
+  background: white;
+  border-radius: 16px;
+  padding: 18px;
+  margin-bottom: 12px;
+  box-shadow: 0 4px 16px rgba(44,31,14,0.07);
+  transition: transform 0.3s ease;
+}
+.outfit-card:active { transform: scale(0.99); }
+.outfit-occasion { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 4px; }
+.outfit-name { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--text-dark); margin-bottom: 10px; }
+.outfit-dots { display: flex; gap: 6px; margin-bottom: 12px; }
+.outfit-dot { width: 26px; height: 26px; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.15); flex-shrink: 0; }
+.outfit-items { list-style: none; }
+.outfit-items li { font-size: 12px; color: var(--text-mid); padding: 5px 0; border-bottom: 1px dashed rgba(201,169,110,0.15); display: flex; gap: 8px; line-height: 1.4; }
+.outfit-items li:last-child { border-bottom: none; }
+.outfit-items li::before { content: '✦'; color: var(--gold); font-size: 8px; margin-top: 3px; flex-shrink: 0; }
+.outfit-tip { margin-top: 10px; background: rgba(201,169,110,0.08); border-radius: 8px; padding: 10px 12px; font-size: 11px; color: var(--gold-dark); font-style: italic; line-height: 1.5; }
+
+/* ===== PAGE 3: TIPS ===== */
+.tip-accordion {
+  background: white;
+  border-radius: 14px;
+  margin-bottom: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 14px rgba(44,31,14,0.06);
+}
+.tip-accordion-header {
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+.tip-accordion-header:active { background: rgba(201,169,110,0.06); }
+.tip-accordion-icon { font-size: 1.3rem; flex-shrink: 0; }
+.tip-accordion-title { font-family: 'Playfair Display', serif; font-size: 0.95rem; color: var(--text-dark); flex: 1; }
+.tip-accordion-arrow { color: var(--gold); font-size: 12px; transition: transform 0.3s ease; flex-shrink: 0; }
+.tip-accordion.open .tip-accordion-arrow { transform: rotate(180deg); }
+.tip-accordion-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s ease;
+  border-top: 1px solid rgba(201,169,110,0.1);
+}
+.tip-accordion.open .tip-accordion-body { max-height: 500px; }
+.tip-accordion-content { padding: 16px 18px; }
+.tip-list { list-style: none; }
+.tip-list li { font-size: 12.5px; color: var(--text-mid); padding: 6px 0; display: flex; gap: 8px; align-items: flex-start; border-bottom: 1px dashed rgba(201,169,110,0.15); line-height: 1.5; }
+.tip-list li:last-child { border-bottom: none; }
+.tip-list li::before { content: '→'; color: var(--gold); flex-shrink: 0; }
+
+/* ===== PAGE 4: BONUS ===== */
+.quiz-btn {
+  width: 100%;
+  background: var(--cream);
+  border: 1px solid rgba(201,169,110,0.25);
+  border-radius: 12px;
+  padding: 14px 16px;
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  color: var(--text-mid);
+  cursor: pointer;
+  text-align: left;
+  transition: all 0.3s ease;
+  margin-bottom: 8px;
+  display: block;
+}
+.quiz-btn:active { background: rgba(201,169,110,0.1); border-color: var(--gold); }
+.quiz-btn.selected { background: linear-gradient(135deg, var(--gold-dark), var(--gold)); border-color: var(--gold); color: white; }
+
+.quiz-box {
+  background: white;
+  border-radius: 16px;
+  padding: 20px;
+  box-shadow: 0 4px 16px rgba(44,31,14,0.07);
+  margin-bottom: 16px;
+}
+.quiz-step-label { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; }
+.quiz-question { font-family: 'Playfair Display', serif; font-size: 1.05rem; color: var(--text-dark); margin-bottom: 16px; line-height: 1.4; }
+
+.result-box {
+  background: var(--brown-deep);
+  border-radius: 16px;
+  padding: 24px 20px;
+  text-align: center;
+  display: none;
+  margin-bottom: 16px;
+}
+.result-emoji { font-size: 2.5rem; margin-bottom: 10px; }
+.result-label { font-size: 9px; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: 6px; }
+.result-title { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: var(--warm-white); margin-bottom: 12px; }
+.result-colors { display: flex; justify-content: center; gap: 10px; margin-bottom: 14px; }
+.result-color-dot { width: 36px; height: 36px; border-radius: 50%; box-shadow: 0 3px 10px rgba(0,0,0,0.2); }
+.result-desc { font-size: 12.5px; color: rgba(247,242,234,0.7); line-height: 1.6; margin-bottom: 16px; }
+.reset-btn {
+  background: transparent;
+  border: 1px solid rgba(201,169,110,0.35);
+  color: var(--gold-light);
+  padding: 10px 24px;
+  border-radius: 100px;
+  font-size: 11px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  font-family: 'Jost', sans-serif;
+}
+
+.planner-day {
+  background: white;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 14px rgba(44,31,14,0.06);
+}
+.planner-day-name { font-size: 9px; letter-spacing: 3px; text-transform: uppercase; color: var(--gold); margin-bottom: 10px; }
+.planner-label { font-size: 9px; color: var(--text-soft); letter-spacing: 1px; text-transform: uppercase; margin-bottom: 4px; display: block; }
+.planner-input {
+  width: 100%;
+  background: var(--cream);
+  border: 1px solid rgba(201,169,110,0.2);
+  border-radius: 8px;
+  color: var(--text-dark);
+  font-family: 'Jost', sans-serif;
+  font-size: 13px;
+  padding: 8px 12px;
+  outline: none;
+  margin-bottom: 8px;
+  transition: border-color 0.3s ease;
+}
+.planner-input:focus { border-color: var(--gold); }
+.planner-input::placeholder { color: var(--text-soft); font-size: 12px; }
+.planner-colors { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 4px; }
+.planner-color-dot {
+  width: 24px; height: 24px;
+  border-radius: 50%;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: transform 0.2s ease;
+  flex-shrink: 0;
+}
+.planner-color-dot:active { transform: scale(1.2); }
+.planner-color-dot.picked { border-color: var(--gold-dark); transform: scale(1.15); }
+
+/* ===== PAGE 5: HARGA ===== */
+.price-card {
+  background: var(--brown-deep);
+  border-radius: 20px;
+  padding: 28px 22px;
+  position: relative;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.price-card::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(circle at 30% 0%, rgba(201,169,110,0.1), transparent 60%);
+}
+.price-badge {
+  position: absolute;
+  top: 0; right: 0;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  padding: 8px 18px;
+  border-radius: 0 20px 0 16px;
+  font-size: 10px;
+  letter-spacing: 1px;
+  color: white;
+  font-weight: 600;
+}
+.price-inner { position: relative; }
+.price-product-name { font-family: 'Playfair Display', serif; font-size: 1.2rem; color: var(--warm-white); margin-bottom: 20px; margin-top: 8px; }
+.price-includes { margin-bottom: 24px; }
+.price-include-item { display: flex; gap: 10px; align-items: center; font-size: 12.5px; color: rgba(247,242,234,0.75); padding: 6px 0; border-bottom: 1px solid rgba(201,169,110,0.08); }
+.price-include-item:last-child { border-bottom: none; }
+.price-include-item .inc-icon { color: var(--gold); flex-shrink: 0; font-size: 11px; }
+.price-include-item.bonus { color: var(--gold-light); font-weight: 500; }
+.price-divider { height: 1px; background: linear-gradient(to right, transparent, rgba(201,169,110,0.2), transparent); margin: 20px 0; }
+.price-old { font-size: 12px; color: rgba(247,242,234,0.35); text-decoration: line-through; margin-bottom: 4px; }
+.price-new { font-family: 'Playfair Display', serif; font-size: 2.8rem; color: var(--gold); line-height: 1; margin-bottom: 4px; }
+.price-note { font-size: 10px; color: rgba(201,169,110,0.5); letter-spacing: 2px; text-transform: uppercase; margin-bottom: 20px; }
+.cta-btn {
+  display: block;
+  width: 100%;
+  background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+  color: white;
+  padding: 16px;
+  border-radius: 100px;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-align: center;
+  cursor: pointer;
+  border: none;
+  font-family: 'Jost', sans-serif;
+  box-shadow: 0 8px 28px rgba(201,169,110,0.35);
+  animation: ctaPulse 2s ease infinite;
+}
+@keyframes ctaPulse {
+  0%,100% { box-shadow: 0 8px 28px rgba(201,169,110,0.35); }
+  50% { box-shadow: 0 8px 40px rgba(201,169,110,0.6); }
+}
+
+.testimonial-card {
+  background: white;
+  border-radius: 14px;
+  padding: 16px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 14px rgba(44,31,14,0.06);
+}
+.testi-stars { color: var(--gold); font-size: 12px; letter-spacing: 2px; margin-bottom: 8px; }
+.testi-text { font-size: 12.5px; color: var(--text-mid); line-height: 1.6; font-style: italic; margin-bottom: 8px; }
+.testi-name { font-size: 11px; color: var(--gold-dark); font-weight: 500; }
+
+/* SCROLLBAR */
+.page::-webkit-scrollbar { width: 3px; }
+.page::-webkit-scrollbar-track { background: transparent; }
+.page::-webkit-scrollbar-thumb { background: rgba(201,169,110,0.3); border-radius: 10px; }
+</style>
+</head>
+<body>
+
+<!-- TOP HEADER -->
+<div class="top-header">
+  <div>
+    <div class="header-brand">By Windy</div>
+    <div class="header-tagline">Muslimah Elegant Style Guide</div>
+  </div>
+  <div class="header-badge">✦ Premium</div>
+</div>
+
+<!-- PAGES -->
+<div class="pages">
+
+  <!-- PAGE 1: HOME -->
+  <div class="page active" id="page-home">
+    <div class="page-hero">
+      <div class="page-tag">Selamat Datang</div>
+      <div class="page-title">Muslimah<br><em>Elegant</em><br>Style Guide</div>
+      <div class="page-sub">Panduan tampil anggun, berkelas & percaya diri</div>
+    </div>
+    <div class="page-body">
+      <div class="home-quote">
+        <p>"Keanggunan sejati bukan dari harga pakaianmu — tapi dari cara kamu membawa dirimu dengan penuh keyakinan."</p>
+        <span>— By Windy 💛</span>
+      </div>
+
+      <div class="section-label">Isi Panduan</div>
+      <div class="home-chapters">
+        <div class="chapter-card" onclick="goTo('style')">
+          <div class="chapter-icon">🎨</div>
+          <div class="chapter-num">Chapter 01-02</div>
+          <div class="chapter-name">Palet Warna & Outfit</div>
+        </div>
+        <div class="chapter-card" onclick="goTo('tips')">
+          <div class="chapter-icon">💎</div>
+          <div class="chapter-num">Chapter 03-06</div>
+          <div class="chapter-name">Hijab, Tips & Grooming</div>
+        </div>
+        <div class="chapter-card" onclick="goTo('bonus')">
+          <div class="chapter-icon">🎁</div>
+          <div class="chapter-num">Bonus</div>
+          <div class="chapter-name">Quiz & Outfit Planner</div>
+        </div>
+        <div class="chapter-card" onclick="goTo('harga')">
+          <div class="chapter-icon">💰</div>
+          <div class="chapter-num">Penawaran</div>
+          <div class="chapter-name">Harga & Dapatkan</div>
+        </div>
+      </div>
+
+      <div class="bonus-banner" onclick="goTo('bonus')">
+        <div class="bonus-banner-icon">🎁</div>
+        <div class="bonus-banner-text">
+          <div class="bonus-banner-title">2 Bonus Eksklusif!</div>
+          <div class="bonus-banner-sub">Color Quiz + Weekly Planner gratis di dalamnya</div>
+        </div>
+        <div style="color:white;font-size:16px">→</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 2: STYLE -->
+  <div class="page" id="page-style">
+    <div class="page-hero">
+      <div class="page-tag">Chapter 01 & 02</div>
+      <div class="page-title">Warna & <em>Outfit</em></div>
+      <div class="page-sub">Palet warna pilihan & kombinasi outfit berkelas</div>
+    </div>
+    <div class="page-body">
+      <div class="section-label">Palet Warna Premium</div>
+      <div class="palette-grid">
+        <div class="palette-card">
+          <div class="palette-swatch" style="background:#F7F2EA"><div class="palette-shine"></div></div>
+          <div class="palette-info"><div class="palette-name">Warm White</div><div class="palette-mood">Bersih & ringan, feminin</div></div>
+        </div>
+        <div class="palette-card">
+          <div class="palette-swatch" style="background:#E8D5A3"><div class="palette-shine"></div></div>
+          <div class="palette-info"><div class="palette-name">Soft Cream</div><div class="palette-mood">Hangat & lembut</div></div>
+        </div>
+        <div class="palette-card">
+          <div class="palette-swatch" style="background:#C9A96E"><div class="palette-shine"></div></div>
+          <div class="palette-info"><div class="palette-name">Caramel Gold</div><div class="palette-mood">Mewah & hangat</div></div>
+        </div>
+        <div class="palette-card">
+          <div class="palette-swatch" style="background:#D4A5A0"><div class="palette-shine"></div></div>
+          <div class="palette-info"><div class="palette-name">Dusty Rose</div><div class="palette-mood">Feminin & romantis</div></div>
+        </div>
+        <div class="palette-card">
+          <div class="palette-swatch" style="background:#8C7B68"><div class="palette-shine"></div></div>
+          <div class="palette-info"><div class="palette-name">Warm Taupe</div><div class="palette-mood">Netral premium</div></div>
+        </div>
+        <div class="palette-card">
+          <div class="palette-swatch" style="background:#7A9E8A"><div class="palette-shine"></div></div>
+          <div class="palette-info"><div class="palette-name">Sage Green</div><div class="palette-mood">Natural berkelas</div></div>
+        </div>
+        <div class="palette-card">
+          <div class="palette-swatch" style="background:#A08898"><div class="palette-shine"></div></div>
+          <div class="palette-info"><div class="palette-name">Dusty Mauve</div><div class="palette-mood">Dewasa & elegan</div></div>
+        </div>
+        <div class="palette-card">
+          <div class="palette-swatch" style="background:#2C1F0E"><div class="palette-shine"></div></div>
+          <div class="palette-info"><div class="palette-name">Deep Mocha</div><div class="palette-mood">Statement mewah</div></div>
+        </div>
+      </div>
+
+      <div class="section-label">Kombinasi Outfit</div>
+
+      <div class="outfit-card">
+        <div class="outfit-occasion">Kasual Harian</div>
+        <div class="outfit-name">Elegan di Rumah</div>
+        <div class="outfit-dots">
+          <div class="outfit-dot" style="background:#F7F2EA;border:1px solid #ddd"></div>
+          <div class="outfit-dot" style="background:#E8D5A3"></div>
+          <div class="outfit-dot" style="background:#C9A96E"></div>
+        </div>
+        <ul class="outfit-items">
+          <li>Gamis katun polos warna Warm White</li>
+          <li>Pashmina Soft Cream, dililit simpel</li>
+          <li>Ikat pinggang tipis warna gold</li>
+          <li>Sandal selop kulit warna nude</li>
+        </ul>
+        <div class="outfit-tip">💡 Tambahkan pin hijab bunga kecil untuk sentuhan manis</div>
+      </div>
+
+      <div class="outfit-card">
+        <div class="outfit-occasion">Belanja & Jalan</div>
+        <div class="outfit-name">Earth Tone Chic</div>
+        <div class="outfit-dots">
+          <div class="outfit-dot" style="background:#8C7B68"></div>
+          <div class="outfit-dot" style="background:#D4A5A0"></div>
+          <div class="outfit-dot" style="background:#E8D5A3"></div>
+        </div>
+        <ul class="outfit-items">
+          <li>Outer cardigan panjang Warm Taupe</li>
+          <li>Dress inner Dusty Rose</li>
+          <li>Hijab segiempat Cream, simpel</li>
+          <li>Tote bag canvas coklat</li>
+        </ul>
+        <div class="outfit-tip">💡 Gulung sedikit lengan outer untuk kesan kasual stylish</div>
+      </div>
+
+      <div class="outfit-card">
+        <div class="outfit-occasion">Acara Keluarga</div>
+        <div class="outfit-name">Fresh & Natural</div>
+        <div class="outfit-dots">
+          <div class="outfit-dot" style="background:#7A9E8A"></div>
+          <div class="outfit-dot" style="background:#F7F2EA;border:1px solid #ddd"></div>
+          <div class="outfit-dot" style="background:#C9A96E"></div>
+        </div>
+        <ul class="outfit-items">
+          <li>Gamis linen Sage Green</li>
+          <li>Hijab voal Warm White</li>
+          <li>Anting emas kecil minimalis</li>
+          <li>Flat shoes atau kitten heels nude</li>
+        </ul>
+        <div class="outfit-tip">💡 Sage green sangat fotogenik untuk foto keluarga!</div>
+      </div>
+
+      <div class="outfit-card">
+        <div class="outfit-occasion">Formal & Spesial</div>
+        <div class="outfit-name">Mewah Bersahaja</div>
+        <div class="outfit-dots">
+          <div class="outfit-dot" style="background:#2C1F0E"></div>
+          <div class="outfit-dot" style="background:#C9A96E"></div>
+          <div class="outfit-dot" style="background:#E8D5A3"></div>
+        </div>
+        <ul class="outfit-items">
+          <li>Abaya hitam atau Deep Mocha polos</li>
+          <li>Hijab Cream dengan pin emas kecil</li>
+          <li>Jam tangan rantai gold minimalis</li>
+          <li>Heels atau kitten heels nude/hitam</li>
+        </ul>
+        <div class="outfit-tip">💡 Less is more — semakin simpel, semakin terlihat mahal</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 3: TIPS -->
+  <div class="page" id="page-tips">
+    <div class="page-hero">
+      <div class="page-tag">Chapter 03 — 06</div>
+      <div class="page-title">Tips & <em>Rahasia</em></div>
+      <div class="page-sub">Hijab, golden rules, body type & grooming</div>
+    </div>
+    <div class="page-body">
+      <div class="section-label">Gaya Hijab Berkelas</div>
+
+      <div class="tip-accordion" onclick="toggleAccordion(this)">
+        <div class="tip-accordion-header">
+          <div class="tip-accordion-icon">🧣</div>
+          <div class="tip-accordion-title">Pashmina Simple</div>
+          <div class="tip-accordion-arrow">▼</div>
+        </div>
+        <div class="tip-accordion-body">
+          <div class="tip-accordion-content">
+            <p style="font-size:13px;color:var(--text-mid);line-height:1.6">Dililitkan simpel tanpa banyak layer. Terlihat bersih, ringan, dan modern. Cocok untuk tampilan kasual hingga semi-formal. Pilih bahan jersey atau diamond yang nyaman seharian.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-accordion" onclick="toggleAccordion(this)">
+        <div class="tip-accordion-header">
+          <div class="tip-accordion-icon">🔲</div>
+          <div class="tip-accordion-title">Segiempat Rapi</div>
+          <div class="tip-accordion-arrow">▼</div>
+        </div>
+        <div class="tip-accordion-body">
+          <div class="tip-accordion-content">
+            <p style="font-size:13px;color:var(--text-mid);line-height:1.6">Dilipat diagonal, dipin rapi di bawah dagu. Kesan sangat rapi dan profesional. Wajib coba untuk acara formal, kerja, atau meeting penting.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-accordion" onclick="toggleAccordion(this)">
+        <div class="tip-accordion-header">
+          <div class="tip-accordion-icon">🌸</div>
+          <div class="tip-accordion-title">Voal Melambai</div>
+          <div class="tip-accordion-arrow">▼</div>
+        </div>
+        <div class="tip-accordion-body">
+          <div class="tip-accordion-content">
+            <p style="font-size:13px;color:var(--text-mid);line-height:1.6">Bahan voal yang jatuh dan melambai memberikan kesan anggun dan feminin. Pilihan terbaik untuk acara keluarga, arisan, atau pesta.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:20px">Golden Style Rules</div>
+
+      <div class="tip-accordion" onclick="toggleAccordion(this)">
+        <div class="tip-accordion-header">
+          <div class="tip-accordion-icon">🎨</div>
+          <div class="tip-accordion-title">Maksimal 3 Warna</div>
+          <div class="tip-accordion-arrow">▼</div>
+        </div>
+        <div class="tip-accordion-body">
+          <div class="tip-accordion-content">
+            <p style="font-size:13px;color:var(--text-mid);line-height:1.6">Dalam satu outfit, gunakan maksimal 2-3 warna saja. Terlalu banyak warna membuat tampilan terlihat ramai dan tidak elegan.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-accordion" onclick="toggleAccordion(this)">
+        <div class="tip-accordion-header">
+          <div class="tip-accordion-icon">👗</div>
+          <div class="tip-accordion-title">Bahan adalah Segalanya</div>
+          <div class="tip-accordion-arrow">▼</div>
+        </div>
+        <div class="tip-accordion-body">
+          <div class="tip-accordion-content">
+            <p style="font-size:13px;color:var(--text-mid);line-height:1.6">Baju murah dari bahan berkualitas selalu terlihat lebih mahal dari baju mahal dari bahan murahan. Pilih linen, sifon, atau katun premium.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-accordion" onclick="toggleAccordion(this)">
+        <div class="tip-accordion-header">
+          <div class="tip-accordion-icon">💎</div>
+          <div class="tip-accordion-title">Rapi Lebih Penting dari Mahal</div>
+          <div class="tip-accordion-arrow">▼</div>
+        </div>
+        <div class="tip-accordion-body">
+          <div class="tip-accordion-content">
+            <p style="font-size:13px;color:var(--text-mid);line-height:1.6">Baju sederhana yang rapi, bersih, dan bebas dari kusut selalu lebih berkelas dari outfit mahal yang tidak terawat.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:20px">Tips Bentuk Tubuh</div>
+
+      <div class="tip-accordion" onclick="toggleAccordion(this)">
+        <div class="tip-accordion-header">
+          <div class="tip-accordion-icon">🍐</div>
+          <div class="tip-accordion-title">Tubuh Pear</div>
+          <div class="tip-accordion-arrow">▼</div>
+        </div>
+        <div class="tip-accordion-body">
+          <div class="tip-accordion-content">
+            <ul class="tip-list">
+              <li>Pilih atasan dengan detail atau warna cerah</li>
+              <li>Rok A-line atau gamis bervolume di bawah</li>
+              <li>Hindari rok pensil ketat di area pinggul</li>
+              <li>Outer atau blazer untuk seimbangkan bahu</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-accordion" onclick="toggleAccordion(this)">
+        <div class="tip-accordion-header">
+          <div class="tip-accordion-icon">🍎</div>
+          <div class="tip-accordion-title">Tubuh Apple</div>
+          <div class="tip-accordion-arrow">▼</div>
+        </div>
+        <div class="tip-accordion-body">
+          <div class="tip-accordion-content">
+            <ul class="tip-list">
+              <li>Gamis dengan empire waist (tali di bawah dada)</li>
+              <li>Bahan yang jatuh dan mengalir, bukan kaku</li>
+              <li>Outer panjang untuk kesan ramping vertikal</li>
+              <li>Fokus aksesori di area leher & wajah</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-accordion" onclick="toggleAccordion(this)">
+        <div class="tip-accordion-header">
+          <div class="tip-accordion-icon">⌛</div>
+          <div class="tip-accordion-title">Tubuh Hourglass</div>
+          <div class="tip-accordion-arrow">▼</div>
+        </div>
+        <div class="tip-accordion-body">
+          <div class="tip-accordion-content">
+            <ul class="tip-list">
+              <li>Hampir semua potongan cocok untukmu!</li>
+              <li>Gamis dengan ikat pinggang untuk menonjolkan lekuk</li>
+              <li>Wrap dress atau kaftan yang mengikuti lekuk</li>
+              <li>Nikmati kebebasan bereksperimen!</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="section-label" style="margin-top:20px">Rahasia Grooming</div>
+
+      <div class="tip-accordion" onclick="toggleAccordion(this)">
+        <div class="tip-accordion-header">
+          <div class="tip-accordion-icon">🧴</div>
+          <div class="tip-accordion-title">Skincare Basic</div>
+          <div class="tip-accordion-arrow">▼</div>
+        </div>
+        <div class="tip-accordion-body">
+          <div class="tip-accordion-content">
+            <p style="font-size:13px;color:var(--text-mid);line-height:1.6">Cleanser, toner, moisturizer, sunscreen. Konsisten lebih penting dari produk mahal. Kulit terawat = natural glow yang tidak bisa dibeli.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="tip-accordion" onclick="toggleAccordion(this)">
+        <div class="tip-accordion-header">
+          <div class="tip-accordion-icon">🌸</div>
+          <div class="tip-accordion-title">Parfum Pilihan</div>
+          <div class="tip-accordion-arrow">▼</div>
+        </div>
+        <div class="tip-accordion-body">
+          <div class="tip-accordion-content">
+            <p style="font-size:13px;color:var(--text-mid);line-height:1.6">Pilih parfum dengan aroma floral, oud, atau musk yang halus. Semprot di pergelangan tangan dan belakang telinga. Wangi adalah detail tersembunyi yang selalu diingat orang.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- PAGE 4: BONUS -->
+  <div class="page" id="page-bonus">
+    <div class="page-hero">
+      <div class="page-tag">Eksklusif</div>
+      <div class="page-title">🎁 Bonus <em>Spesial</em></div>
+      <div class="page-sub">Color Personality Quiz + Weekly Outfit Planner</div>
+    </div>
+    <div class="page-body">
+      <div class="section-label">Bonus 1 — Color Personality Quiz</div>
+
+      <div id="quiz-q1" class="quiz-box">
+        <div class="quiz-step-label">Pertanyaan 1 dari 4</div>
+        <div class="quiz-question">Bagaimana kamu menggambarkan kepribadianmu?</div>
+        <button class="quiz-btn" onclick="answer('q1','a',this)">Hangat & Ramah 🌻</button>
+        <button class="quiz-btn" onclick="answer('q1','b',this)">Tenang & Elegan 🌿</button>
+        <button class="quiz-btn" onclick="answer('q1','c',this)">Berani & Percaya Diri 💎</button>
+        <button class="quiz-btn" onclick="answer('q1','d',this)">Lembut & Romantis 🌸</button>
+      </div>
+
+      <div id="quiz-q2" class="quiz-box" style="display:none">
+        <div class="quiz-step-label">Pertanyaan 2 dari 4</div>
+        <div class="quiz-question">Warna kulit kamu lebih ke mana?</div>
+        <button class="quiz-btn" onclick="answer('q2','a',this)">Kuning langsat / terang ☀️</button>
+        <button class="quiz-btn" onclick="answer('q2','b',this)">Sawo matang / medium 🍫</button>
+        <button class="quiz-btn" onclick="answer('q2','c',this)">Gelap / coklat tua 🌑</button>
+        <button class="quiz-btn" onclick="answer('q2','d',this)">Putih / sangat terang 🌙</button>
+      </div>
+
+      <div id="quiz-q3" class="quiz-box" style="display:none">
+        <div class="quiz-step-label">Pertanyaan 3 dari 4</div>
+        <div class="quiz-question">Aktivitas favoritmu di waktu luang?</div>
+        <button class="quiz-btn" onclick="answer('q3','a',this)">Memasak & berkumpul keluarga 🍳</button>
+        <button class="quiz-btn" onclick="answer('q3','b',this)">Membaca & me-time 📚</button>
+        <button class="quiz-btn" onclick="answer('q3','c',this)">Berbisnis & networking 💼</button>
+        <button class="quiz-btn" onclick="answer('q3','d',this)">Berkreasi & seni 🎨</button>
+      </div>
+
+      <div id="quiz-q4" class="quiz-box" style="display:none">
+        <div class="quiz-step-label">Pertanyaan 4 dari 4</div>
+        <div class="quiz-question">Kesan apa yang ingin kamu berikan ke orang lain?</div>
+        <button class="quiz-btn" onclick="answer('q4','a',this)">Hangat & mudah didekati 🤗</button>
+        <button class="quiz-btn" onclick="answer('q4','b',this)">Tenang & berwibawa 👑</button>
+        <button class="quiz-btn" onclick="answer('q4','c',this)">Tegas & profesional 💪</button>
+        <button class="quiz-btn" onclick="answer('q4','d',this)">Feminin & anggun 🌹</button>
+      </div>
+
+      <div class="result-box" id="quiz-result">
+        <div class="result-emoji" id="r-emoji">✨</div>
+        <div class="result-label">Palet Warnamu</div>
+        <div class="result-title" id="r-title">—</div>
+        <div class="result-colors" id="r-colors"></div>
+        <div class="result-desc" id="r-desc">—</div>
+        <button class="reset-btn" onclick="resetQuiz()">Coba Lagi ↺</button>
+      </div>
+
+      <div class="section-label" style="margin-top:8px">Bonus 2 — Weekly Outfit Planner</div>
+      <div id="planner"></div>
+    </div>
+  </div>
+
+  <!-- PAGE 5: HARGA -->
+  <div class="page" id="page-harga">
+    <div class="page-hero">
+      <div class="page-tag">Penawaran Spesial</div>
+      <div class="page-title">Harga <em>Perkenalan</em></div>
+      <div class="page-sub">Terbatas — ambil sekarang sebelum harga naik!</div>
+    </div>
+    <div class="page-body">
+      <div class="price-card">
+        <div class="price-badge">🔥 Limited!</div>
+        <div class="price-inner">
+          <div style="font-size:1.8rem;margin-bottom:4px">💛</div>
+          <div class="price-product-name">Muslimah Elegant Style Guide</div>
+          <div class="price-includes">
+            <div class="price-include-item"><span class="inc-icon">✦</span> 7 Chapter panduan style lengkap</div>
+            <div class="price-include-item"><span class="inc-icon">✦</span> 8 Palet warna premium pilihan</div>
+            <div class="price-include-item"><span class="inc-icon">✦</span> 4 Kombinasi outfit siap pakai</div>
+            <div class="price-include-item"><span class="inc-icon">✦</span> Tips per bentuk tubuh</div>
+            <div class="price-include-item"><span class="inc-icon">✦</span> Panduan grooming & occasion</div>
+            <div class="price-include-item bonus"><span class="inc-icon">🎁</span> BONUS: Color Personality Quiz</div>
+            <div class="price-include-item bonus"><span class="inc-icon">🎁</span> BONUS: Weekly Outfit Planner</div>
+          </div>
+          <div class="price-divider"></div>
+          <div class="price-old">Harga Normal Rp 199.000</div>
+          <div class="price-new">Rp 49.000</div>
+          <div class="price-note">Harga Perkenalan · Terbatas!</div>
+          <button class="cta-btn">Dapatkan Sekarang →</button>
+        </div>
+      </div>
+
+      <div class="section-label">Testimoni</div>
+
+      <div class="testimonial-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"Akhirnya ada panduan style khusus muslimah yang lengkap dan praktis! Langsung bisa dipraktekin. Worth it banget!"</div>
+        <div class="testi-name">— Sari, Surabaya</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"Color quiz-nya akurat banget! Sekarang aku lebih percaya diri mix & match baju. Terima kasih By Windy!"</div>
+        <div class="testi-name">— Dina, Bandung</div>
+      </div>
+
+      <div class="testimonial-card">
+        <div class="testi-stars">★★★★★</div>
+        <div class="testi-text">"Outfit planner mingguan sangat membantu! Tidak bingung lagi mau pakai apa setiap hari. Recommended!"</div>
+        <div class="testi-name">— Rika, Jakarta</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- BOTTOM NAV -->
+<div class="bottom-nav">
+  <div class="nav-item active" onclick="goTo('home')">
+    <div class="nav-icon">🏠</div>
+    <div class="nav-label">Home</div>
+  </div>
+  <div class="nav-item" onclick="goTo('style')">
+    <div class="nav-icon">🎨</div>
+    <div class="nav-label">Style</div>
+  </div>
+  <div class="nav-item" onclick="goTo('tips')">
+    <div class="nav-icon">💎</div>
+    <div class="nav-label">Tips</div>
+  </div>
+  <div class="nav-item" onclick="goTo('bonus')">
+    <div class="nav-icon">🎁</div>
+    <div class="nav-label">Bonus</div>
+  </div>
+  <div class="nav-item" onclick="goTo('harga')">
+    <div class="nav-icon">💰</div>
+    <div class="nav-label">Harga</div>
+  </div>
+</div>
+
+<script>
+// ===== NAVIGATION =====
+const pageMap = {
+  home: 'page-home',
+  style: 'page-style',
+  tips: 'page-tips',
+  bonus: 'page-bonus',
+  harga: 'page-harga'
+};
+
+const navItems = document.querySelectorAll('.nav-item');
+const navKeys = ['home','style','tips','bonus','harga'];
+
+function goTo(key) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById(pageMap[key]).classList.add('active');
+  navItems.forEach((n,i) => n.classList.toggle('active', navKeys[i] === key));
+  // scroll to top
+  document.getElementById(pageMap[key]).scrollTop = 0;
+}
+
+// ===== ACCORDION =====
+function toggleAccordion(el) {
+  el.classList.toggle('open');
+}
+
+// ===== QUIZ =====
+const qAnswers = {};
+const results = {
+  warm: { emoji:'🌻', title:'Warm & Golden Palette', colors:['#E8D5A3','#C9A96E','#D4A5A0','#8C7B68'], desc:'Kamu tipe yang hangat dan penuh energi positif! Earth tone keemasan sangat memancarkan kepribadianmu yang ramah dan terbuka.' },
+  calm: { emoji:'🌿', title:'Calm & Natural Palette', colors:['#7A9E8A','#F7F2EA','#E8D5A3','#A08898'], desc:'Kamu memiliki aura tenang dan berwibawa. Sage, cream, dan mauve mencerminkan kedewasaan dan keelegananmu yang natural.' },
+  bold: { emoji:'💎', title:'Bold & Refined Palette', colors:['#2C1F0E','#C9A96E','#8C7B68','#F7F2EA'], desc:'Kamu percaya diri dan berjiwa pemimpin! Kontras deep mocha dan gold menciptakan tampilan tegas sekaligus sangat berkelas.' },
+  soft: { emoji:'🌸', title:'Soft & Romantic Palette', colors:['#D4A5A0','#E8D5A3','#A08898','#F7F2EA'], desc:'Kamu wanita yang lembut, feminin, dan penuh kasih sayang. Dusty rose dan mauve sempurna untukmu — anggun tanpa berteriak.' }
+};
+
+function answer(q, val, btn) {
+  qAnswers[q] = val;
+  btn.closest('.quiz-box').querySelectorAll('.quiz-btn').forEach(b => b.classList.remove('selected'));
+  btn.classList.add('selected');
+  const num = parseInt(q.replace('q',''));
+  setTimeout(() => {
+    document.getElementById('quiz-'+q).style.display = 'none';
+    if (num < 4) {
+      const next = document.getElementById('quiz-q'+(num+1));
+      next.style.display = 'block';
+    } else {
+      showResult();
+    }
+  }, 350);
+}
+
+function showResult() {
+  const counts = {a:0,b:0,c:0,d:0};
+  Object.values(qAnswers).forEach(v => counts[v]++);
+  const top = Object.entries(counts).sort((a,b)=>b[1]-a[1])[0][0];
+  const map = {a:'warm',b:'calm',c:'bold',d:'soft'};
+  const r = results[map[top]];
+  document.getElementById('r-emoji').textContent = r.emoji;
+  document.getElementById('r-title').textContent = r.title;
+  document.getElementById('r-desc').textContent = r.desc;
+  document.getElementById('r-colors').innerHTML = r.colors.map(c =>
+    `<div class="result-color-dot" style="background:${c}${c==='#F7F2EA'?';border:1px solid #ccc':''}"></div>`
+  ).join('');
+  document.getElementById('quiz-result').style.display = 'block';
+}
+
+function resetQuiz() {
+  Object.keys(qAnswers).forEach(k => delete qAnswers[k]);
+  document.getElementById('quiz-result').style.display = 'none';
+  ['q2','q3','q4'].forEach(q => { document.getElementById('quiz-'+q).style.display = 'none'; });
+  const q1 = document.getElementById('quiz-q1');
+  q1.style.display = 'block';
+  q1.querySelectorAll('.quiz-btn').forEach(b => b.classList.remove('selected'));
+}
+
+// ===== PLANNER =====
+const days = ['Senin','Selasa','Rabu','Kamis','Jumat','Sabtu','Minggu'];
+const palColors = ['#F7F2EA','#E8D5A3','#C9A96E','#D4A5A0','#8C7B68','#7A9E8A','#A08898','#2C1F0E'];
+
+function buildPlanner() {
+  document.getElementById('planner').innerHTML = days.map((day,i) => `
+    <div class="planner-day">
+      <div class="planner-day-name">${day}</div>
+      <span class="planner-label">Outfit</span>
+      <input class="planner-input" placeholder="Gamis cream + pashmina..." id="p-outfit-${i}" maxlength="60">
+      <span class="planner-label">Warna Pilihan</span>
+      <div class="planner-colors">
+        ${palColors.map(c=>`<div class="planner-color-dot" style="background:${c}${c==='#F7F2EA'?';border:1px solid #ccc':''}" onclick="pickPlan(this,${i})" title="${c}"></div>`).join('')}
+      </div>
+    </div>
+  `).join('');
+}
+
+function pickPlan(el, i) {
+  el.closest('.planner-colors').querySelectorAll('.planner-color-dot').forEach(d => d.classList.remove('picked'));
+  el.classList.add('picked');
+}
+
+buildPlanner();
+
+// ===== PWA INSTALL =====
+let deferredPrompt;
+const installBanner = document.getElementById('install-banner');
+const installBtn = document.getElementById('install-btn');
+const installClose = document.getElementById('install-close');
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  e.preventDefault();
+  deferredPrompt = e;
+  setTimeout(() => {
+    installBanner.style.transform = 'translateY(0)';
+    installBanner.style.opacity = '1';
+  }, 2000);
+});
+
+installBtn && installBtn.addEventListener('click', async () => {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    const { outcome } = await deferredPrompt.userChoice;
+    deferredPrompt = null;
+    installBanner.style.transform = 'translateY(100px)';
+    installBanner.style.opacity = '0';
+  }
+});
+
+installClose && installClose.addEventListener('click', () => {
+  installBanner.style.transform = 'translateY(100px)';
+  installBanner.style.opacity = '0';
+});
+
+// ===== SERVICE WORKER =====
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    const swCode = `
+const CACHE = 'by-windy-v1';
+const ASSETS = ['/'];
+self.addEventListener('install', e => {
+  e.waitUntil(caches.open(CACHE).then(c => c.addAll(ASSETS)));
+});
+self.addEventListener('fetch', e => {
+  e.respondWith(
+    caches.match(e.request).then(r => r || fetch(e.request).catch(() => caches.match('/')))
+  );
+});`;
+    const blob = new Blob([swCode], {type: 'application/javascript'});
+    const swUrl = URL.createObjectURL(blob);
+    navigator.serviceWorker.register(swUrl).catch(() => {});
+  });
+}
+</script>
+
+<!-- PWA INSTALL BANNER -->
+<div id="install-banner" style="
+  position:fixed;
+  bottom:80px;
+  left:50%;
+  transform:translate(-50%, 100px);
+  opacity:0;
+  transition:all 0.5s cubic-bezier(0.16,1,0.3,1);
+  z-index:999;
+  width:calc(100% - 32px);
+  max-width:440px;
+  background:linear-gradient(135deg,#2C1F0E,#3D2510);
+  border:1px solid rgba(201,169,110,0.3);
+  border-radius:20px;
+  padding:16px 18px;
+  display:flex;
+  align-items:center;
+  gap:14px;
+  box-shadow:0 8px 32px rgba(0,0,0,0.4);
+">
+  <div style="font-size:2rem;flex-shrink:0">📱</div>
+  <div style="flex:1">
+    <div style="font-family:'Playfair Display',serif;font-size:0.95rem;color:#FDFAF5;margin-bottom:3px">Install App By Windy</div>
+    <div style="font-size:11px;color:rgba(201,169,110,0.7)">Simpan di homescreen HP kamu!</div>
+  </div>
+  <button id="install-btn" style="
+    background:linear-gradient(135deg,#9A7A45,#C9A96E);
+    border:none;color:white;
+    padding:8px 16px;
+    border-radius:100px;
+    font-size:11px;
+    font-weight:600;
+    cursor:pointer;
+    font-family:'Jost',sans-serif;
+    letter-spacing:1px;
+    flex-shrink:0;
+  ">Install</button>
+  <button id="install-close" style="
+    background:transparent;
+    border:none;
+    color:rgba(201,169,110,0.5);
+    font-size:18px;
+    cursor:pointer;
+    padding:4px;
+    flex-shrink:0;
+    line-height:1;
+  ">×</button>
+</div>
+
+</body>
+</html>
